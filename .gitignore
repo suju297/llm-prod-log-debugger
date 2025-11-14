@@ -1,5 +1,8 @@
 .DS_Store
 
+# Local environment files
+.env
+
 # Python bytecode and caches
 __pycache__/
 *.py[cod]

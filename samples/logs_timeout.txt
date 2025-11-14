@@ -1,0 +1,20 @@
+2024-03-14T10:00:00.000Z INFO [app-start] Application starting...
+2024-03-14T10:00:05.123Z INFO [app-start] Database connection pool initialized with size: 10
+2024-03-14T10:00:10.456Z INFO [app-start] Server listening on port 8080
+2024-03-14T10:15:23.789Z INFO [request-id: req-001] GET /api/users/123
+2024-03-14T10:15:24.012Z DEBUG [request-id: req-001] Acquiring database connection from pool
+2024-03-14T10:15:24.234Z DEBUG [request-id: req-001] Executing query: SELECT * FROM users WHERE id = 123
+2024-03-14T10:15:24.567Z INFO [request-id: req-001] Response sent: 200 OK
+2024-03-14T10:30:45.890Z INFO [request-id: req-100] GET /api/users/bulk
+2024-03-14T10:30:46.123Z DEBUG [request-id: req-100] Acquiring database connection from pool
+2024-03-14T10:30:51.456Z WARN [request-id: req-100] Slow query detected: 5.3s
+2024-03-14T10:31:00.789Z ERROR [request-id: req-101] Database connection timeout after 30s
+2024-03-14T10:31:01.012Z ERROR [request-id: req-101] Unable to acquire connection from pool
+2024-03-14T10:31:01.234Z ERROR [request-id: req-101] Pool stats: active=10, idle=0, waiting=15
+2024-03-14T10:31:15.567Z ERROR [request-id: req-102] Database connection timeout after 30s
+2024-03-14T10:31:15.890Z ERROR [request-id: req-102] Unable to acquire connection from pool
+2024-03-14T10:31:30.123Z ERROR [request-id: req-103] Database connection timeout after 30s
+2024-03-14T10:31:30.456Z FATAL [health-check] Health check failed: No available database connections
+2024-03-14T10:31:45.789Z ERROR [request-id: req-104] Request failed: Service Unavailable
+2024-03-14T10:32:00.012Z WARN [monitor] High connection wait time: avg=28.5s
+2024-03-14T10:32:00.234Z ERROR [monitor] Connection leak detected: 10 connections not returned to pool

@@ -1,0 +1,13 @@
+2024-03-14T14:30:00.123Z INFO [request-id: a1b2c3d4] Server started on port 8080
+2024-03-14T14:30:15.456Z INFO [request-id: a1b2c3d4] Processing user login request
+2024-03-14T14:30:15.789Z DEBUG [request-id: a1b2c3d4] Fetching user profile for ID: 12345
+2024-03-14T14:30:16.012Z ERROR [request-id: a1b2c3d4] NullPointerException in UserService
+java.lang.NullPointerException: Cannot invoke "com.example.Profile.getName()" because "user.profile" is null
+    at com.example.UserService.getUserDetails(UserService.java:42)
+    at com.example.LoginController.handleLogin(LoginController.java:28)
+2024-03-14T14:30:16.234Z WARN [request-id: a1b2c3d4] Login failed for user 12345
+2024-03-14T14:30:16.567Z ERROR [request-id: a1b2c3d4] Request failed with status 500
+2024-03-14T14:31:00.890Z INFO [request-id: e5f6g7h8] Processing user login request
+2024-03-14T14:31:01.123Z ERROR [request-id: e5f6g7h8] NullPointerException in UserService
+java.lang.NullPointerException: Cannot invoke "com.example.Profile.getName()" because "user.profile" is null
+    at com.example.UserService.getUserDetails(UserService.java:42)

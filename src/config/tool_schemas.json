@@ -1,0 +1,25 @@
+[
+  {
+    "name": "parse_logs",
+    "description": "Structure raw logs into JSON entries (timestamp, level, request_id, msg)",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "raw_logs": {"type": "string"}
+      },
+      "required": ["raw_logs"]
+    }
+  },
+  {
+    "name": "grep_error",
+    "description": "Regex pattern search in provided files",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pattern": {"type": "string"},
+        "files": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["pattern", "files"]
+    }
+  }
+]

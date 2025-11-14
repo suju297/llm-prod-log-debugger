@@ -1,0 +1,38 @@
+gemini:
+  backend: "sdk"        # sdk | rest
+  model: "gemini-2.0-flash-exp"
+  temperature: 0.2
+  max_tokens: 2048
+  api_key_env: "GEMINI_API_KEY"
+  # api_url removed - only used by REST backend
+  pricing:
+    # Pricing as of 2025-01 for Gemini 2.0 Flash (text/image/video tier)
+    # https://ai.google.dev/gemini-api/docs/pricing
+    input_per_1k_tokens: 0.0001    # $0.10 per 1M tokens
+    output_per_1k_tokens: 0.0004   # $0.40 per 1M tokens
+    currency: "USD"
+    note: "Estimate based on Gemini 2.0 Flash pricing (Jan 2025)"
+
+pipeline:
+  min_rounds: 2      # Minimum rounds before confirming
+  max_rounds: 3      # Maximum rounds allowed
+
+limits:
+  max_log_lines: 150
+  max_code_chars: 20000
+  max_tool_result_chars: 1500  # Truncate tool results in prompts
+
+retry:
+  attempts: 2
+  backoff_seconds: 2
+
+output:
+  dir: "out"
+  json_indent: 2
+
+thresholds:
+  min_confidence: 0.7  # Retry if confidence below this
+  critical_confidence: 0.5  # Alert if still below this after retry
+
+debug:
+  include_full_logs: false  # Set true to include all logs in prompt
